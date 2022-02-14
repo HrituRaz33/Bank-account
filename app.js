@@ -10,13 +10,3 @@ document.getElementById('login-submit').addEventListener('click', function(event
         window.location.href ='banking.html'
     }
 })
-
-// handle deposit 
-document.getElementById('deposit-btn').addEventListener('click',function(){
-    //get the amount deposited
-    const depositInput = document.getElementById('deposit-input');
-    const depositAmount = depositInput.value;
-
-    const depositTotal = document.getElementById('deposit-total');
-    depositTotal.innerText = depositAmount;
-})
