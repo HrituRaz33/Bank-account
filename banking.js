@@ -17,9 +17,31 @@ const balanceTotalText= balanceTotal.innerText;
 const previousBalanceTotal=parseFloat(balanceTotalText)
 const newBalanceTotal= previousBalanceTotal + newDepositAmount;
 balanceTotal.innerText=newBalanceTotal;
-
-
-
-
     depositInput.value='';
+})
+//handle withdraw balance
+document.getElementById('withdraw-btn').addEventListener('click',function(event){
+    event.preventDefault()
+    const withdrawInput=document.getElementById('withdraw-input');
+    const withdrawAmountText=withdrawInput.value;
+    const newWithdrawAmount= parseFloat(withdrawAmountText);
+
+
+    const withdrawTotal=document.getElementById('withdraw-total');
+    const previousWithdrawTotalText=withdrawTotal.innerText;
+    const previousWithdrawTotal=parseFloat(previousWithdrawTotalText);
+
+    const newWithdrawTotal= previousWithdrawTotal + newWithdrawAmount;
+    withdrawTotal.innerText=newWithdrawTotal;
+    //clear withdraw input
+    withdrawInput.value='';
+
+
+    //update balance
+    const balanceTotal= document.getElementById('balance-total');
+    const previousBalanceTotalText= balanceTotal.innerText;
+    const previousBalanceTotal=parseFloat(previousBalanceTotalText);
+
+    const newBalanceTotal = previousBalanceTotal  - newWithdrawAmount;
+    balanceTotal.innerText=newBalanceTotal;
 })
